@@ -1,1 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
+    <!-- HUD pip: always visible, small, tap to open panel -->
+    <LinearLayout
+        android:id="@+id/hud_pip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/pip_bg"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="6dp"
+        android:layout_marginBottom="4dp">
+
+        <TextView
+            android:id="@+id/pip_fps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 FPS"
+            android:textColor="@color/positive"
+            android:textSize="11sp"
+            android:fontFamily="monospace"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/pip_coords"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X: 0  Y: 64  Z: 0"
+            android:textColor="@color/text_primary"
+            android:textSize="11sp"
+            android:fontFamily="monospace"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/pip_cps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 CPS"
+            android:textColor="@color/accent"
+            android:textSize="11sp"
+            android:fontFamily="monospace"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/pip_clock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00:00"
+            android:textColor="@color/text_dim"
+            android:textSize="11sp"
+            android:fontFamily="monospace"
+            android:visibility="gone" />
+
+        <!-- Always-visible dot so user can tap even when all HUD items off -->
+        <View
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:background="@drawable/accent_dot"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+
+    <!-- Full panel (hidden by default, shown on pip tap) -->
+    <LinearLayout
+        android:id="@+id/panel_container"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/panel_bg"
+        android:visibility="gone">
+
+        <!-- Draggable header -->
+        <LinearLayout
+            android:id="@+id/panel_header"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:orientation="horizontal"
+            android:background="@drawable/header_bg"
+            android:paddingHorizontal="12dp"
+            android:gravity="center_vertical">
+
+            <!-- Accent left stripe -->
+            <View
+                android:layout_width="3dp"
+                android:layout_height="20dp"
+                android:background="@color/accent"
+                android:layout_marginEnd="10dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="CLIENT"
+                android:textColor="@color/accent"
+                android:textSize="14sp"
+                android:fontFamily="monospace"
+                android:textStyle="bold"
+                android:letterSpacing="0.2" />
+
+            <TextView
+                android:id="@+id/header_fps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="60"
+                android:textColor="@color/positive"
+                android:textSize="13sp"
+                android:fontFamily="monospace" />
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/border" />
+
+        <!-- Category tabs -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:orientation="horizontal"
+            android:background="@color/panel">
+
+            <TextView
+                android:id="@+id/tab_hud"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="HUD"
+                android:textColor="@color/text_dim"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:background="@drawable/tab_selector"
+                android:fontFamily="monospace" />
+
+            <TextView
+                android:id="@+id/tab_visual"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Visual"
+                android:textColor="@color/text_dim"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:background="@drawable/tab_selector"
+                android:fontFamily="monospace" />
+
+            <TextView
+                android:id="@+id/tab_movement"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Move"
+                android:textColor="@color/text_dim"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:background="@drawable/tab_selector"
+                android:fontFamily="monospace" />
+
+            <TextView
+                android:id="@+id/tab_utility"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Util"
+                android:textColor="@color/text_dim"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:background="@drawable/tab_selector"
+                android:fontFamily="monospace" />
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/border" />
+
+        <!-- Module list (populated by OverlayViewController) -->
+        <LinearLayout
+            android:id="@+id/module_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingVertical="4dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg"
+    android:padding="24dp">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="32dp"
+        android:paddingBottom="32dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CLIENT"
+            android:textColor="@color/accent"
+            android:textSize="32sp"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.3"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Minecraft Bedrock Utility Client"
+            android:textColor="@color/text_dim"
+            android:textSize="13sp"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
+    <!-- Status card -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/card_bg"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="STATUS"
+            android:textColor="@color/text_dim"
+            android:textSize="11sp"
+            android:letterSpacing="0.15"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:id="@+id/tv_minecraft_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Minecraft: Checking..."
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:layout_marginBottom="6dp" />
+
+        <TextView
+            android:id="@+id/tv_overlay_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Overlay: Checking..."
+            android:textColor="@color/text_primary"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- Launch button -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_launch"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="LAUNCH MINECRAFT"
+        android:textColor="@color/text_primary"
+        android:textSize="14sp"
+        android:letterSpacing="0.1"
+        android:background="@drawable/btn_accent"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Settings button -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_settings"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="SETTINGS"
+        android:textColor="@color/text_dim"
+        android:textSize="13sp"
+        android:background="@drawable/btn_secondary" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Footer -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Open source. No root required."
+        android:textColor="@color/text_dim"
+        android:textSize="11sp"
+        android:gravity="center"
+        android:paddingBottom="16dp" />
+
+</LinearLayout>
